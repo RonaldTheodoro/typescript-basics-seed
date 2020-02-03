@@ -29,3 +29,15 @@ const pizza = {
 }
 
 pizza.getName();
+
+
+class Car {
+
+    move() {
+        console.log('Vrunnn!');
+    }
+
+}
+
+let car = new Car();
+car.move();
