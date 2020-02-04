@@ -17,3 +17,10 @@ function createOrder(
     return {pizza, toppings};
 }
 console.log(createOrder(pizza, toppings));
+
+function multply(a: number, b=25) {
+  return a * b
+}
+
+console.log(multply(5))
+console.log(multply(5, 35))
