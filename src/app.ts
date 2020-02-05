@@ -1,26 +1,10 @@
-const pizza = {
-    name: 'Pepperoni',
-    toppings: ['pepperoni']
-};
+const pizzaCost: number = 25.5;
+const pizzaToppings: number = 2;
 
-interface IPizza {
-    name: string,
-    toppings: string[]
-};
-
-function order({ name: pizzaName, toppings: pizzaToppings }: IPizza) {
-    return { pizzaName, pizzaToppings };
+function calculatePrice(cost: number, toppings: number): number {
+    return cost + 1.5 * toppings;
 }
 
-const { pizzaName } = order(pizza);
-console.log(pizzaName);
+const cost: number = calculatePrice(pizzaCost, pizzaToppings);
 
-const toppings = ['pepperoni', 'bacon', 'chilli'];
-
-function logToppings([ first, second, third ]: string[]) {
-    console.log(first);
-    console.log(second);
-    console.log(third);
-}
-
-logToppings(toppings);
+console.log(`Pizza costs: ${cost}`);
