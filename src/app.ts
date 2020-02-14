@@ -1,7 +1,4 @@
-let coupon: any;
+let implicitCoupon = 'pizza25';
+let explicitCoupon: string;
 
-coupon = 5;
-
-coupon = 'sdfsd'
-
-coupon = true;
+explicitCoupon = 'pizza25';
