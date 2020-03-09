@@ -1,7 +1,20 @@
-let sumOrder: (price: number, quantity?: number) => number;
+let pizza: {
+    name: string,
+    price: number,
+    quantity?: number,
+    getName(): string,
+    setName(name: string): void
+};
 
+pizza = {
+    name: 'Plain Old Pepperoni',
+    price: 20,
+    getName() {
+        return this.name
+    },
+    setName(name) {
+        this.name = name;
+    }
+}
 
-sumOrder = (x, y = 1) => x * y;
-
-console.log(`Total sum: ${sumOrder(15)}`)
-console.log(`Total sum: ${sumOrder(15, 5)}`)
+console.log(pizza.getName());
