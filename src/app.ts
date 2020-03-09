@@ -1,20 +1,7 @@
-let pizza: {
-    name: string,
-    price: number,
-    quantity?: number,
-    getName(): string,
-    setName(name: string): void
-};
+const sizesStr: string[] = ['small', 'medium', 'large'];
 
-pizza = {
-    name: 'Plain Old Pepperoni',
-    price: 20,
-    getName() {
-        return this.name
-    },
-    setName(name) {
-        this.name = name;
-    }
-}
+const sizesNum: number[] = [1, 2, 3];
 
-console.log(pizza.getName());
+let toppings: Array<string>;
+
+toppings = ['pepperoni', 'tomato', 'bacon'];
