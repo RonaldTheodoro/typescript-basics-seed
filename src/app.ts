@@ -1,6 +1,7 @@
 interface Pizza {
     name: string;
     sizes: string[];
+    getAvailableSizes(): string[];
 };
 
 interface Pizzas {
@@ -13,6 +14,9 @@ function createPizza(name: string, sizes: string[]): Pizza {
     return {
         name,
         sizes,
+        getAvailableSizes() {
+            return this.sizes;
+        }
     };
 }
 
