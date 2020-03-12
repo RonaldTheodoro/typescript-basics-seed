@@ -6,6 +6,10 @@ interface Pizza extends Sizes {
     name: string;
     toppings?: number;
     getAvailableSizes(): string[];
+    [key: number]: string;
+    dictionary?: {
+        [key: string]: any;
+    }
 };
 
 interface Pizzas {
@@ -27,6 +31,7 @@ function createPizza(name: string, sizes: string[], toppings?: number): Pizza {
 
 pizza = createPizza('pepperoni', ['small', 'medium', 'large']);
 
+pizza[1] = 'xyz';
 pizza.toppings = 1;
 
 console.log(pizza);
