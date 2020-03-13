@@ -1,38 +1,14 @@
-interface Sizes {
-    sizes: string[];
+function Pizza(name: string) {
+    this.name = name;
+    this.topping = [];
 }
 
-interface Pizza extends Sizes {
-    name: string;
-    toppings?: number;
-    getAvailableSizes(): string[];
-    [key: number]: string;
-    dictionary?: {
-        [key: string]: any;
-    }
-};
-
-interface Pizzas {
-    data: Pizza[];
+Pizza.prototype.addTopping = function addTopping(topping: string) {
+    this.topping.push(topping);
 }
 
-let pizza: Pizza;
+const pizza = new Pizza('Pepperoni');
 
-function createPizza(name: string, sizes: string[], toppings?: number): Pizza {
-    return {
-        name,
-        sizes,
-        toppings,
-        getAvailableSizes() {
-            return this.sizes;
-        }
-    };
-}
-
-pizza = createPizza('pepperoni', ['small', 'medium', 'large']);
-
-pizza[1] = 'xyz';
-pizza.toppings = 1;
+pizza.addTopping('cheese')
 
 console.log(pizza);
-console.log(pizza.getAvailableSizes());
