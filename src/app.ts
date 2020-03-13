@@ -1,11 +1,17 @@
-function Pizza(name: string) {
-    this.name = name;
-    this.topping = [];
+class Pizza {
+    name: string;
+    topping: string[] = [];
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    addTopping(topping: string) {
+        this.topping.push(topping);
+    }
+
 }
 
-Pizza.prototype.addTopping = function addTopping(topping: string) {
-    this.topping.push(topping);
-}
 
 const pizza = new Pizza('Pepperoni');
 
