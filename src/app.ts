@@ -1,6 +1,6 @@
 class Sizes {
 
-    constructor(private sizes: string[]) { }
+    constructor(public sizes: string[]) { }
 
     set availableSizes(sizes: string[]) {
         this.sizes = sizes;
@@ -13,18 +13,12 @@ class Sizes {
 }
 
 
-const sizes = new Sizes(['small', 'medium']);
-
-console.log(sizes.availableSizes);
-
-sizes.availableSizes = ['medium', 'large'];
-
-console.log(sizes.availableSizes);
-
-class Pizza {
+class Pizza extends Sizes {
     public topping: string[] = [];
 
-    constructor(readonly name: string) { }
+    constructor(readonly name: string, public sizes: string[]) {
+        super(sizes);
+    }
 
     addTopping(topping: string) {
         this.topping.push(topping);
@@ -33,9 +27,10 @@ class Pizza {
 }
 
 
-const pizza = new Pizza('Pepperoni');
+const pizza = new Pizza('Pepperoni', ['small', 'large']);
 
 pizza.addTopping('cheese')
 
+console.log(pizza.availableSizes);
 console.log(pizza.name);
 console.log(pizza);
